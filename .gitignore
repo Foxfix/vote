@@ -1,0 +1,25 @@
+.idea
+ __pycache__
+getbootstrap.com
+.DS_Store
+.project
+*.pyc
+*.psd
+*.pdf
+/test
+/spec
+__pycache__
+dev
+db.sqlite3
+.DS_Store
+settings_loc.py
+my_site/settings_1
+*~
+*.*~
+*.zip
+*.egg-info
+*.db
+.coverage
+.emacs.desktop*
+.tox
+.cache
