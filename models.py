@@ -33,3 +33,9 @@ class Polls(Base):
 
 	def __repr__(self):
 		return self.option.name 
+
+
+class Users(Base):
+	email = db.Column(db.String(100), unique=True)
+	username = db.Column(db.String(50), unique=True)
+	password = db.Column(db.String(200))
