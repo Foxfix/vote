@@ -65,6 +65,22 @@ def logout():
 		session.pop('user')
 
 		flash('See you again')
+	return redirect(url_for('home'))
+
+
+@votr.route('/api/polls', methods=['GET', 'POST'])
+def api_polls():
+	if request.method == 'POST':
+		poll = request.get_json()
+
+		return "The title of the poll is {} and the options are {} and {}".format(poll['title'], *poll['options'])
+	else:
+		all_polls = {}
+		topics = Topics.query.all()
+		for topic in topics:
+			all_polls[topic.title] = {'options': [poll.option.name for poll in Polls.query.filter_by(topic=topic)]}
+			
+		return jsonify(all_polls)
 
 if __name__=='__main__':
 	votr.run()
