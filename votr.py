@@ -82,5 +82,12 @@ def api_polls():
 			
 		return jsonify(all_polls)
 
+
+@votr.route('/api/polls', methods=['GET', 'POST'])
+def api_polls():
+	if request.method == 'POST'
+	poll = request.get_json()
+	return
+
 if __name__=='__main__':
 	votr.run()
